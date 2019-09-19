@@ -1,0 +1,7 @@
+#OrderStructuredJob.job
+type=command
+command=ssh spark@namenode01.cd -p920 "spark-submit --class cd.lxj.flow.structured.order.OrderStructuredJob --name OrderStructuredJob --queue quick --jars hdfs:///apps/libs/*,/home/spark/sparkjars/bijobs/flow/core_2.11-0.1-prod.jar --master yarn-cluster --executor-cores 2 --num-executors 3 --driver-memory 4G --executor-memory 2G  /home/spark/sparkjars/bijobs/flow/data_flow_lxj_2.11-0.1-prod.jar"
+failure.emails=jobsliang@can-dao.com,royliang@can-dao.com,kevinyan@can-dao.com
+retries=2
+retry.backoff=180000
+
